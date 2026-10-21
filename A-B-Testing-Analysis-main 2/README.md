@@ -1,9 +1,10 @@
-
-# A/B Test Analysis: User Behavior Analysis
+# A/B Test Analysis: Checkout Button Redesign
 
 End-to-end statistical analysis of an A/B test comparing the current checkout button (**A**) with a redesigned one (**B**). Includes data quality checks, hypothesis testing, confidence intervals, bootstrapping, segment analysis and a business recommendation.
 
 ![A/B test results: overall conversion, conversion by device, and bootstrap distribution of lift](results/ab_test_results.png)
+
+*Left: overall conversion rate by group. Middle: conversion rate by device. Right: bootstrap distribution of the lift (B - A); the grey lines mark the 95% confidence interval and the dashed line marks zero.*
 
 ## Business Question
 Does the new checkout button increase conversion rate and revenue per visitor?
@@ -33,10 +34,13 @@ Does the new checkout button increase conversion rate and revenue per visitor?
 ## Project Structure
 ```
 ab-testing-project/
+├── README.md
 ├── data/ab_test_data.csv      # experiment data (8,000 visitors)
 ├── src/generate_data.py       # creates the dataset
 ├── src/analysis.py            # full analysis pipeline
-├── results/                   # chart + text summary
+├── results/
+│   ├── ab_test_results.png    # chart shown above
+│   └── summary.txt            # text summary
 └── requirements.txt
 ```
 

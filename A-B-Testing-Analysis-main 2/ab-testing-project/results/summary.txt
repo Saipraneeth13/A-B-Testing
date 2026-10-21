@@ -1,0 +1,24 @@
+1) SANITY CHECK (sample ratio)
+   A=4063, B=3937  | SRM p-value=0.159 -> OK
+
+2) SUMMARY
+       visitors  conversions    rate  revenue_per_visitor
+group                                                    
+A          4063          407  0.1002               5.7986
+B          3937          518  0.1316               7.8672
+
+3) SIGNIFICANCE TEST (two-proportion z-test)
+   z=4.391, p-value=0.0000
+   Lift: 0.0314 abs (31.3% relative), 95% CI [0.0174, 0.0454]
+   Decision: Reject H0 - B is different from A
+
+4) BOOTSTRAP 95% CI for lift: [0.0172, 0.0457]
+
+5) REVENUE PER VISITOR: Welch t-test p-value=0.0000
+
+6) SEGMENTS BY DEVICE (Bonferroni alpha = 0.0167)
+   desktop  A=0.129 B=0.158  p=0.0288  not significant
+   mobile   A=0.083 B=0.114  p=0.0008  significant
+   tablet   A=0.092 B=0.139  p=0.0556  not significant
+
+7) APPROXIMATE POWER at observed effect: 99.2%

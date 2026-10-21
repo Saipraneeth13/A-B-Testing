@@ -2,7 +2,7 @@
 
 End-to-end statistical analysis of an A/B test comparing the current checkout button (**A**) with a redesigned one (**B**). Includes data quality checks, hypothesis testing, confidence intervals, bootstrapping, segment analysis and a business recommendation.
 
-A/B test results: overall conversion, conversion by device, and bootstrap distribution of lift
+A/B test results: overall conversion, conversion by device, and bootstrap distribution of lift :
 <img width="2250" height="600" alt="ab_test_results" src="https://github.com/user-attachments/assets/e69621ae-6889-4db1-a976-188f433eee1e" />
 
 

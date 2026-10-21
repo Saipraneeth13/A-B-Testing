@@ -3,6 +3,8 @@
 End-to-end statistical analysis of an A/B test comparing the current checkout button (**A**) with a redesigned one (**B**). Includes data quality checks, hypothesis testing, confidence intervals, bootstrapping, segment analysis and a business recommendation.
 
 ![A/B test results: overall conversion, conversion by device, and bootstrap distribution of lift](results/ab_test_results.png)
+<img width="2250" height="600" alt="ab_test_results" src="https://github.com/user-attachments/assets/e69621ae-6889-4db1-a976-188f433eee1e" />
+
 
 *Left: overall conversion rate by group. Middle: conversion rate by device. Right: bootstrap distribution of the lift (B - A); the grey lines mark the 95% confidence interval and the dashed line marks zero.*
 

@@ -1,9 +1,9 @@
 
-# A/B Test Analysis: Checkout Button Redesign
+# A/B Test Analysis: User Behavior Analysis
 
 End-to-end statistical analysis of an A/B test comparing the current checkout button (**A**) with a redesigned one (**B**). Includes data quality checks, hypothesis testing, confidence intervals, bootstrapping, segment analysis and a business recommendation.
 
-![Results](results/ab_test_results.png)
+![A/B test results: overall conversion, conversion by device, and bootstrap distribution of lift](results/ab_test_results.png)
 
 ## Business Question
 Does the new checkout button increase conversion rate and revenue per visitor?

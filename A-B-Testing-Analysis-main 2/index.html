@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A/B Test: User Behavior Analysis</title>
+  <meta name="description" content="A/B Test: User Behavior Analysis. End-to-end statistical analysis comparing current checkout button (A) with redesigned button (B).">
+  
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="app-wrapper">
+    <!-- Top Announcement Bar (Proof Link only) -->
+    <div class="deccan-top-announcement">
+      <button id="mobile-toggle-btn" class="mobile-sidebar-toggle" aria-label="Toggle navigation">
+        ☰ Menu
+      </button>
+      <a id="top-announcement-link">Explore Statistical Proof &rarr;</a>
+    </div>
+
+    <div class="app-container">
+      
+      <!-- =======================================================================
+           LEFT SIDEBAR (Navigation & Controls)
+           ======================================================================= -->
+      <aside class="sidebar" id="app-sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-logo">
+            <svg class="heading-svg-icon logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <span>A/B Test Analysis</span>
+          </div>
+          
+          <div class="sidebar-status-group">
+            <div class="status-row">
+              <span>Data Status:</span>
+              <span class="status-badge-cyan">Simulated</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-section-title">Navigation Menu</div>
+        
+        <ul class="nav-menu" id="sidebar-nav">
+          <li class="nav-item active" data-tab="tab-overview">
+            <span class="radio-circle"></span>
+            <span>Executive Overview</span>
+          </li>
+          <li class="nav-item" data-tab="tab-conversion">
+            <span class="radio-circle"></span>
+            <span>Conversion Analysis</span>
+          </li>
+          <li class="nav-item" data-tab="tab-statistical">
+            <span class="radio-circle"></span>
+            <span>Statistical Testing</span>
+          </li>
+          <li class="nav-item" data-tab="tab-device">
+            <span class="radio-circle"></span>
+            <span>Device Segmentation</span>
+          </li>
+          <li class="nav-item" data-tab="tab-revenue">
+            <span class="radio-circle"></span>
+            <span>Revenue Analysis</span>
+          </li>
+          <li class="nav-item" data-tab="tab-business">
+            <span class="radio-circle"></span>
+            <span>Business Insights</span>
+          </li>
+          <li class="nav-item" data-tab="tab-explorer">
+            <span class="radio-circle"></span>
+            <span>Dataset Explorer</span>
+          </li>
+        </ul>
+
+        <div class="sidebar-divider"></div>
+
+        <!-- Experiment Parameters Controls -->
+        <div class="sidebar-section-title">
+          <svg class="heading-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          <span>Experiment Parameters</span>
+        </div>
+        
+        <div class="param-group">
+          <div class="param-header">
+            <span>Significance Level (α)</span>
+            <span id="label-alpha" class="param-val">0.05</span>
+          </div>
+          <input type="range" id="slider-alpha" class="slider-custom" min="0.01" max="0.10" step="0.01" value="0.05">
+          <div class="slider-helper-note">Default α = 0.05</div>
+        </div>
+
+        <div class="param-group">
+          <div class="param-header">
+            <span>SRM Alpha Threshold</span>
+            <span id="label-srm" class="param-val">0.01</span>
+          </div>
+          <input type="range" id="slider-srm" class="slider-custom" min="0.001" max="0.05" step="0.001" value="0.01">
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <!-- Test Summary Info -->
+        <div class="sidebar-section-title">
+          <svg class="heading-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+          <span>Test Summary</span>
+        </div>
+        <ul class="summary-list">
+          <li>• <strong>Metric:</strong> Checkout Conversion Rate</li>
+          <li>• <strong>Control (A):</strong> Original Button</li>
+          <li>• <strong>Variant (B):</strong> Redesigned Button</li>
+          <li>• <strong>Traffic Split:</strong>
+            <div style="padding-left: 0.8rem; color: var(--text-subtle); line-height: 1.45; margin-top: 0.15rem;">
+              Planned 50/50<br>Actual 50.8/49.2
+            </div>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- =======================================================================
+           MAIN CONTENT CANVAS
+           ======================================================================= -->
+      <main class="main-content">
+        
+        <!-- Top Status Bar: Dynamic Significance Badge -->
+        <div class="top-status-bar">
+          <div id="significance-badge" class="significance-badge">
+            Significant at α = 0.05
+          </div>
+        </div>
+
+        <!-- Page Titles -->
+        <div class="page-header-row">
+          <div>
+            <h1 class="page-title">A/B Test: User Behavior Analysis</h1>
+            <p class="page-subtitle">Executive Experiment Dashboard | Control (A) vs. Variant (B)</p>
+          </div>
+        </div>
+
+        <!-- Data Transparency Banner (Shortened to 1-2 lines) -->
+        <div class="transparency-banner">
+          <svg class="heading-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+          <div>
+            <strong>Data Transparency:</strong> Powered by a simulated benchmark dataset (8,000 visitors, seed 42). Upload custom datasets anytime in the <a id="link-to-explorer">Dataset Explorer</a> tab.
+          </div>
+        </div>
+
+        <!-- Executive Recommendation Box -->
+        <div class="recommendation-box">
+          <div class="rec-title">
+            <svg class="heading-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>
+            <span>Recommendation: roll out Variant B, prioritising Mobile</span>
+          </div>
+          <p class="rec-body" id="rec-headline-text">
+            Variant B delivered a <strong>+31.3% conversion lift</strong> and <strong>+$2.07 revenue per visitor</strong>.
+          </p>
+          <div class="rec-followup-line">
+            Continue monitoring Desktop and Tablet.
+          </div>
+        </div>
+
+        <!-- =====================================================================
+             6 TOP-LINE KPI CARDS ROW (Equal Height & Equal Text Lines)
+             ===================================================================== -->
+        <div class="kpi-row">
+          <!-- KPI 1 -->
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">TOTAL VISITORS</span>
+              <span class="kpi-tooltip-trigger" data-tooltip="Total unique users randomized into Control and Variant groups (4,063 in A, 3,937 in B).">?</span>
+            </div>
+            <div class="kpi-value" id="kpi-total-visitors">8,000</div>
+            <div class="kpi-subtext">
+              <div class="kpi-context-line" id="kpi-visitors-split">4,063 in A + 3,937 in B</div>
+              <div class="kpi-context-line-2">50.8% / 49.2% actual split</div>
+            </div>
+          </div>
+
+          <!-- KPI 2 -->
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">CONVERSION RATE A</span>
+              <span class="kpi-tooltip-trigger" data-tooltip="Percentage of Control visitors who completed checkout using original button (407 / 4,063).">?</span>
+            </div>
+            <div class="kpi-value" id="kpi-cr-a">10.02%</div>
+            <div class="kpi-subtext">
+              <div class="kpi-context-line" id="kpi-cr-a-context">407 of 4,063 visitors</div>
+              <div class="kpi-context-line-2">95% CI: [9.10%, 10.94%]</div>
+            </div>
+          </div>
+
+          <!-- KPI 3 -->
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">CONVERSION RATE B</span>
+              <span class="kpi-tooltip-trigger" data-tooltip="Percentage of Variant visitors who completed checkout using redesigned button (518 / 3,937).">?</span>
+            </div>
+            <div class="kpi-value cyan" id="kpi-cr-b">13.16%</div>
+            <div class="kpi-subtext">
+              <div class="kpi-context-line" id="kpi-cr-b-context">518 of 3,937 visitors</div>
+              <div class="kpi-context-line-2">95% CI: [12.10%, 14.22%]</div>
+            </div>
+          </div>
+
+          <!-- KPI 4 (Relative Lift with explicit relative CI label & no duplicate badge) -->
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">RELATIVE LIFT</span>
+              <span class="kpi-tooltip-trigger" data-tooltip="Relative percentage increase in conversion rate: ((CR_B - CR_A) / CR_A) * 100. Computed as difference CI ÷ control rate.">?</span>
+            </div>
+            <div class="kpi-value cyan" id="kpi-rel-lift">+31.3%</div>
+            <div class="kpi-subtext">
+              <div class="kpi-context-line" id="kpi-rel-lift-ci">95% CI: [+17.3%, +45.3%]</div>
+              <div class="kpi-context-line-2">Statistically significant (p &lt; 0.001)</div>
+            </div>
+          </div>
+
+          <!-- KPI 5 -->
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">RPV (CONTROL A)</span>
+              <span class="kpi-tooltip-trigger" data-tooltip="Average revenue generated per visitor in Control group (Total Revenue $23,559.65 / 4,063 visitors).">?</span>
+            </div>
+            <div class="kpi-value" id="kpi-rpv-a">$5.80</div>
+            <div class="kpi-subtext">
+              <div class="kpi-context-line" id="kpi-rpv-a-context">$23.6K total revenue</div>
+              <div class="kpi-context-line-2">AOV: $57.89 per order</div>
+            </div>
+          </div>
+
+          <!-- KPI 6 (RPV Variant B with 95% CI & Welch's t-test p-value on two separate lines, no duplicate badge) -->
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">RPV (VARIANT B)</span>
+              <span class="kpi-tooltip-trigger" data-tooltip="Average revenue generated per visitor in Variant group (Total Revenue $30,973.20 / 3,937 visitors).">?</span>
+            </div>
+            <div class="kpi-value cyan" id="kpi-rpv-b">$7.87</div>
+            <div class="kpi-subtext">
+              <div class="kpi-context-line" id="kpi-rpv-ci">95% CI: [+$1.13, +$3.01]</div>
+              <div class="kpi-context-line-2" id="kpi-rpv-pval">Welch's t p &lt; 0.001</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Revenue Lift Decomposition Note directly under RPV cards, left-aligned, normal font -->
+        <div class="kpi-formula-container">
+          <div class="kpi-formula-note" id="kpi-formula-note">
+            Revenue lift = +31.3% conversion &times; +3.3% order value
+          </div>
+        </div>
+
+        <!-- =====================================================================
+             TAB PANEL 1: EXECUTIVE OVERVIEW (Default View)
+             ===================================================================== -->
+        <section id="tab-overview" class="tab-panel active">
+          
+          <!-- Two Side-by-Side Charts -->
+          <div class="charts-row">
+            <!-- Left Chart: Checkout Conversion Rate Comparison -->
+            <div class="chart-card">
+              <div class="chart-header">
+                <span class="chart-title">Checkout Conversion Rate Comparison</span>
+              </div>
+              <div class="chart-canvas-wrapper">
+                <canvas id="chartOverviewConversion"></canvas>
+              </div>
+            </div>
+
+            <!-- Right Chart: Conversion Rate by Device Type -->
+            <div class="chart-card">
+              <div class="chart-header">
+                <span class="chart-title">Conversion Rate by Device Type</span>
+                <div class="chart-legend">
+                  <div class="legend-item">
+                    <span class="legend-square" style="background: #475569; border: 1px solid #64748b;"></span>
+                    <span>Group A (Control)</span>
+                  </div>
+                  <div class="legend-item">
+                    <span class="legend-square" style="background: #00998c; border: 1px solid #5fe7c0;"></span>
+                    <span>Group B (Variant)</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Per-Device Relative Lift & Traffic Share Placed Next to Chart -->
+              <div class="chart-with-sidebar">
+                <div class="chart-canvas-wrapper has-sidebar">
+                  <canvas id="chartOverviewDevice"></canvas>
+                </div>
+                <div class="device-summary-col">
+                  <!-- Mobile -->
+                  <div class="device-stat-badge highlight" id="dev-card-mobile">
+                    <div class="stat-badge-header">
+                      <span class="device-name">
+                        <svg class="device-icon-svg mobile-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5" ry="2.5"></rect><line x1="10" y1="5" x2="14" y2="5"></line><line x1="11" y1="18.5" x2="13" y2="18.5"></line></svg>
+                        Mobile
+                      </span>
+                      <span class="pill-badge active-blue" id="dev-status-mobile">Significant after correction</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                      <span class="device-lift-num" id="dev-lift-mobile">+36.7%</span>
+                      <span class="stat-badge-header"><span class="device-traffic" id="dev-traffic-mobile">55% traffic</span></span>
+                    </div>
+                    <div class="device-rate-sub" id="dev-rates-mobile">8.31% &rarr; 11.37% CR</div>
+                    <div class="device-sample-line" id="dev-sample-mobile">n: 2,213 (A) vs 2,190 (B)</div>
+                    <div class="device-ci-line" id="dev-ci-mobile">unadjusted 95% CI: [+15.6%, +57.9%]</div>
+                    <div class="device-ci-line" id="dev-padj-mobile" style="color: #94a3b8; font-size: 0.73rem;">Bonferroni-adj. p = 0.0024</div>
+                  </div>
+
+                  <!-- Tablet -->
+                  <div class="device-stat-badge highlight" id="dev-card-tablet">
+                    <div class="stat-badge-header">
+                      <span class="device-name">
+                        <svg class="device-icon-svg tablet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" ry="3"></rect><circle cx="12" cy="16.5" r="1" fill="currentColor"></circle><line x1="6" y1="7" x2="18" y2="7"></line></svg>
+                        Tablet
+                      </span>
+                      <span class="pill-badge inconclusive" id="dev-status-tablet">Directional, not significant after correction</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                      <span class="device-lift-num" id="dev-lift-tablet">+50.9%</span>
+                      <span class="stat-badge-header"><span class="device-traffic" id="dev-traffic-tablet">10% traffic</span></span>
+                    </div>
+                    <div class="device-rate-sub" id="dev-rates-tablet">9.18% &rarr; 13.85% CR</div>
+                    <div class="device-sample-line" id="dev-sample-tablet">n: 403 (A) vs 361 (B)</div>
+                    <div class="device-ci-line" id="dev-ci-tablet">unadjusted 95% CI: [+1.4%, +100.3%]</div>
+                    <div class="device-note-small">
+                      <svg class="heading-svg-icon note-icon" style="stroke: var(--amber-primary); width: 12px; height: 12px; margin-right: 0.25rem;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                      Tablet lift is based on a small sample &ndash; treat as directional.
+                    </div>
+                    <div class="device-ci-line" style="color: #94a3b8; font-size: 0.72rem; line-height: 1.35; margin-top: 0.15rem;">
+                      Note: 95% CI excludes 0 while p &gt; 0.05 because the CI uses Wald normal approximation while the p-value uses Yates continuity-corrected &chi;&sup2;.
+                    </div>
+                    <div class="device-ci-line" id="dev-padj-tablet" style="color: #94a3b8; font-size: 0.73rem;">Bonferroni-adj. p = 0.1667</div>
+                  </div>
+
+                  <!-- Desktop -->
+                  <div class="device-stat-badge" id="dev-card-desktop">
+                    <div class="stat-badge-header">
+                      <span class="device-name">
+                        <svg class="device-icon-svg desktop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        Desktop
+                      </span>
+                      <span class="pill-badge inconclusive" id="dev-status-desktop">Directional, not significant after correction</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                      <span class="device-lift-num" id="dev-lift-desktop">+22.9%</span>
+                      <span class="stat-badge-header"><span class="device-traffic" id="dev-traffic-desktop">35% traffic</span></span>
+                    </div>
+                    <div class="device-rate-sub" id="dev-rates-desktop">12.85% &rarr; 15.80% CR</div>
+                    <div class="device-sample-line" id="dev-sample-desktop">n: 1,447 (A) vs 1,386 (B)</div>
+                    <div class="device-ci-line" id="dev-ci-desktop">unadjusted 95% CI: [+2.8%, +43.0%]</div>
+                    <div class="device-ci-line" id="dev-padj-desktop" style="color: #94a3b8; font-size: 0.73rem;">Bonferroni-adj. p = 0.0864</div>
+                  </div>
+
+                  <!-- Small exploratory note under device cards -->
+                  <div class="device-exploratory-note">
+                    Segment results are exploratory. p-values are Bonferroni-adjusted for 3 devices.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Group Performance Summary Table (With B vs A Difference Row) -->
+          <div class="table-card">
+            <div class="table-card-header">
+              <span class="table-card-title">
+                <svg class="heading-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><line x1="8" y1="10" x2="16" y2="10"></line><line x1="8" y1="14" x2="16" y2="14"></line><line x1="8" y1="18" x2="12" y2="18"></line></svg>
+                <span>Group Performance Summary</span>
+              </span>
+            </div>
+            <div class="table-scroll-container">
+              <table class="clean-table">
+                <thead>
+                  <tr>
+                    <th>Group Variant</th>
+                    <th>Visitors (n)</th>
+                    <th>Conversions (x)</th>
+                    <th>Conversion Rate</th>
+                    <th>95% CI (conversion rate)</th>
+                    <th>Total Revenue</th>
+                    <th>Revenue Per Visitor (RPV)</th>
+                    <th>Avg Order Value (AOV)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr id="table-row-group-a">
+                    <td><strong>Group A (Original Button)</strong></td>
+                    <td id="tbl-n-a">4,063</td>
+                    <td id="tbl-conv-a">407</td>
+                    <td id="tbl-cr-a">10.02%</td>
+                    <td id="tbl-ci-a">[9.10%, 10.94%]</td>
+                    <td id="tbl-rev-a">$23,559.65</td>
+                    <td id="tbl-rpv-a">$5.80</td>
+                    <td id="tbl-aov-a">$57.89</td>
+                  </tr>
+                  <tr id="table-row-group-b">
+                    <td><strong style="color: #5fe7c0;">Group B (Redesigned Button)</strong></td>
+                    <td id="tbl-n-b">3,937</td>
+                    <td id="tbl-conv-b">518</td>
+                    <td style="color: #5fe7c0; font-weight: 700;" id="tbl-cr-b">13.16%</td>
+                    <td style="color: #5fe7c0;" id="tbl-ci-b">[12.10%, 14.22%]</td>
+                    <td id="tbl-rev-b">$30,973.20</td>
+                    <td style="color: #5fe7c0; font-weight: 700;" id="tbl-rpv-b">$7.87</td>
+                    <td id="tbl-aov-b">$59.79</td>
+                  </tr>
+                  <!-- Difference (B vs A) Row -->
+                  <tr class="table-diff-row" id="table-row-diff">
+                    <td><strong style="color: #5fe7c0;">B vs A (Lift)</strong></td>
+                    <td style="color: var(--text-subtle); text-align: center;">&mdash;</td>
+                    <td style="color: var(--text-subtle); text-align: center;">&mdash;</td>
+                    <td style="color: #5fe7c0; font-weight: 700;" id="tbl-diff-cr">+3.14 pts (+31.3%) &bull; p &lt; 0.001</td>
+                    <td style="color: #5fe7c0; font-family: var(--font-mono);" id="tbl-diff-ci">[+1.74, +4.54] pts</td>
+                    <td style="color: var(--text-subtle); text-align: center;">&mdash;</td>
+                    <td style="color: #5fe7c0; font-weight: 700;" id="tbl-diff-rpv">+$2.07 (+35.7%)<br><span style="font-size: 0.68rem; color: #a7f3d0; font-family: var(--font-mono); font-weight: 400;" id="tbl-diff-rpv-ci">95% CI: [+$1.13, +$3.01]</span></td>
+                    <td id="tbl-diff-aov">+$1.90 (+3.3%)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Tactile Button Comparison Widget -->
+          <div class="table-card" style="margin-bottom: 0.5rem; padding-bottom: 1.15rem;">
+            <div class="table-card-header">
+              <span class="table-card-title">
+                <svg class="heading-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                <span>Interactive Button Mockup Comparison</span>
+              </span>
+            </div>
+            <div class="button-demo-box">
+              <div class="demo-column">
+                <div class="mockup-header-label">CONTROL (A) &bull; MUTED SLATE</div>
+                <div class="mockup-button-slot">
+                  <button id="demo-btn-a" class="btn-a-demo">Checkout &rarr;</button>
+                </div>
+                <div id="demo-feedback-a" class="mockup-feedback">Demo clicks: 0</div>
+              </div>
+              <div class="demo-column">
+                <div class="mockup-header-label variant">VARIANT (B) &bull; EMERALD TEAL REDESIGN</div>
+                <div class="mockup-button-slot">
+                  <button id="demo-btn-b" class="btn-b-demo">
+                    <svg class="btn-lock-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                    <span>Complete Order &amp; Pay &rarr;</span>
+                  </button>
+                </div>
+                <div id="demo-feedback-b" class="mockup-feedback">Demo clicks: 0</div>
+              </div>
+            </div>
+            <!-- Demo clicks isolation note -->
+            <div class="mockup-attribution-note">
+              Demo clicks are for illustration only.
+            </div>
+          </div>
+
+        </section>
+
+        <!-- =====================================================================
+             TAB PANEL 2: CONVERSION ANALYSIS
+             ===================================================================== -->
+        <section id="tab-conversion" class="tab-panel">
+          <div class="callout-box">
+            <strong>Conversion Analysis Focus:</strong> Direct head-to-head evaluation of Control (A) vs Variant (B). Variant B achieved an absolute lift of <strong>+3.14 pts</strong> and a relative lift of <strong>+31.3%</strong> (p &lt; 0.001).
+          </div>
+
+          <div class="charts-row">
+            <div class="chart-card">
+              <div class="chart-header">
+                <span class="chart-title">Completed Checkout Orders</span>
+              </div>
+              <div class="chart-canvas-wrapper">
+                <canvas id="chartConversionOrders"></canvas>
+              </div>
+            </div>
+
+            <div class="chart-card">
+              <div class="chart-header">
+                <span class="chart-title">Cumulative Conversion Rate Over Visitor Volume</span>
+              </div>
+              <div class="chart-canvas-wrapper">
+                <canvas id="chartConversionCumulative"></canvas>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             TAB PANEL 3: STATISTICAL TESTING
+             ===================================================================== -->
+        <section id="tab-statistical" class="tab-panel">
+          
+          <!-- Methods Pipeline line -->
+          <div class="methods-summary-box">
+            <div class="methods-header">
+              <svg class="heading-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+              <strong>Analysis Methods</strong>
+            </div>
+            <div class="methods-list-inline">
+              <span><strong>1. Data validation:</strong> Sample Ratio Mismatch (chi-square goodness of fit)</span> &bull;
+              <span><strong>2. Primary metric:</strong> Two-proportion z-test on conversion rate</span> &bull;
+              <span><strong>3. Uncertainty:</strong> 95% confidence interval + bootstrap (5,000 resamples)</span> &bull;
+              <span><strong>4. Secondary metric:</strong> Welch's t-test on revenue per visitor</span> &bull;
+              <span><strong>5. Segmentation:</strong> Chi-square by device with Bonferroni correction</span> &bull;
+              <span><strong>6. Power:</strong> Approximate observed power at measured effect size</span>
+            </div>
+          </div>
+
+          <div class="callout-box">
+            <b>Statistical Framework:</b><br>
+            • <b>H0:</b> Conversion rate of B = conversion rate of A &bull; <b>H1:</b> Conversion rate of B &ne; conversion rate of A &bull; <b>Significance level:</b> α = 0.05
+          </div>
+
+          <!-- Primary Metric: Two-Proportion Z-Test -->
+          <div class="kpi-row" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 1.5rem;">
+            <div class="kpi-card">
+              <div class="kpi-title">Z-STATISTIC</div>
+              <div class="kpi-value cyan" id="stat-z-stat">4.391</div>
+              <div class="kpi-subtext"><span class="pill-badge active-blue">Critical Z = 1.960</span></div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-title">P-VALUE</div>
+              <div class="kpi-value cyan" id="stat-p-val">&lt; 0.001</div>
+              <div class="kpi-subtext"><span class="pill-badge active-blue">p &lt; 0.001</span></div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-title">DIFF 95% CI</div>
+              <div class="kpi-value" style="font-size: 1.25rem;" id="stat-diff-ci">+1.7 to +4.5 pts</div>
+              <div class="kpi-subtext"><span class="pill-badge">Zero Excluded</span></div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-title">TEST CONCLUSION</div>
+              <div class="kpi-value cyan" style="font-size: 1.3rem;">Reject H0</div>
+              <div class="kpi-subtext"><span class="pill-badge active-blue">Statistically Significant</span></div>
+            </div>
+          </div>
+
+          <!-- Bootstrap 5,000 Resamples Lift Distribution -->
+          <div class="chart-card" style="margin-bottom: 1.5rem;">
+            <div class="chart-header">
+              <span class="chart-title">Bootstrap Distribution of Lift (B - A) &bull; 5,000 Resamples</span>
+              <div style="font-size: 0.75rem; color: #94a3b8; font-family: var(--font-mono);">
+                95% CI marked by grey lines &bull; Zero marked by dashed line
+              </div>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="chartBootstrapHist"></canvas>
+            </div>
+          </div>
+
+          <!-- Statistical Diagnostics & Tests Table -->
+          <div class="table-card">
+            <div class="table-card-header">
+              <span class="table-card-title">Statistical Test Results</span>
+            </div>
+            <table class="clean-table">
+              <thead>
+                <tr>
+                  <th>Analysis Step</th>
+                  <th>Technique</th>
+                  <th>Test Metric &amp; p-Value</th>
+                  <th>Result / Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Data Validation</strong></td>
+                  <td>Goodness-of-fit against 50/50 expected split</td>
+                  <td id="diag-srm-val">χ² = 1.985, p = 0.159</td>
+                  <td><span class="pill-badge active-blue" id="diag-srm-status">Passed (Healthy 50/50 Split)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Primary Metric</strong></td>
+                  <td>Pooled two-proportion z-hypothesis test</td>
+                  <td id="diag-z-val">z = 4.391, p &lt; 0.001, CI: +1.7 to +4.5 pts</td>
+                  <td><span class="pill-badge active-blue">Significant (Reject H0)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Uncertainty Validation</strong></td>
+                  <td>Empirical lift distribution (5,000 resamples)</td>
+                  <td id="diag-boot-val">95% CI: [+1.72%, +4.57%]</td>
+                  <td><span class="pill-badge active-blue">Robust (Zero Excluded)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Secondary Metric</strong></td>
+                  <td>Two-sample t-test for unequal variances</td>
+                  <td id="diag-welch-val">t = 4.315, p &lt; 0.001, 95% CI: [+$1.13, +$3.01]</td>
+                  <td><span class="pill-badge active-blue">Significant (+$2.07 / visitor)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Device Segmentation</strong></td>
+                  <td>Subgroup analysis with Bonferroni correction</td>
+                  <td id="diag-device-val">Mobile p_adj = 0.0024; Tablet p_adj = 0.1667; Desktop p_adj = 0.0864</td>
+                  <td><span class="pill-badge active-blue">Mobile Significant; Others Directional</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Power Analysis</strong></td>
+                  <td>Post-hoc statistical power evaluation</td>
+                  <td id="diag-power-val">Approximate observed power = 99.2% (post-hoc estimate; not evidence)</td>
+                  <td><span class="pill-badge inconclusive" id="diag-power-badge">Approximate (Post-Hoc)</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             TAB PANEL 4: DEVICE SEGMENTATION (Bonferroni Corrected)
+             ===================================================================== -->
+        <section id="tab-device" class="tab-panel">
+          <div class="callout-box">
+            <b>Subgroup Analysis &amp; Bonferroni Correction:</b> Slicing results across 3 devices requires adjusting α to guard against family-wise error rate: <span id="bonf-threshold-formula"><code>α_adj = 0.05 / 3 = 0.0167</code></span> (or p_adj = min(1.0, p &times; 3)).
+          </div>
+
+          <div class="device-grid">
+            <!-- Mobile -->
+            <div class="device-card-item highlighted">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                <strong style="color: #5fe7c0; font-size: 1.05rem; display: flex; align-items: center;">
+                  <svg class="device-icon-svg mobile-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5" ry="2.5"></rect><line x1="10" y1="5" x2="14" y2="5"></line><line x1="11" y1="18.5" x2="13" y2="18.5"></line></svg>
+                  Mobile (55% Traffic)
+                </strong>
+                <span class="pill-badge active-blue" id="tab-dev-status-mobile">Significant after correction</span>
+              </div>
+              <div style="font-size: 0.85rem; color: var(--text-body); line-height: 1.8;">
+                <div>Sample Size: <strong id="tab-dev-sample-mobile">2,213 (A) vs 2,190 (B) &bull; 4,403 total</strong></div>
+                <div>Control CR: <strong id="tab-dev-cra-mobile">8.31% (184 / 2,213)</strong></div>
+                <div>Variant CR: <strong style="color: #5fe7c0;" id="tab-dev-crb-mobile">11.37% (249 / 2,190)</strong></div>
+                <div>Relative Lift: <strong style="color: #5fe7c0;" id="tab-dev-lift-mobile">+36.7%</strong></div>
+                <div style="color: #86efac; font-family: var(--font-mono); font-size: 0.8rem;" id="tab-dev-ci-mobile">unadjusted 95% CI: [+15.6%, +57.9%]</div>
+                <div style="color: #94a3b8; font-size: 0.78rem;" id="tab-dev-padj-mobile">Chi-square p = 0.0008 &bull; Bonferroni-adj. p = 0.0024</div>
+              </div>
+            </div>
+
+            <!-- Tablet -->
+            <div class="device-card-item highlighted">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                <strong style="color: #5fe7c0; font-size: 1.05rem; display: flex; align-items: center;">
+                  <svg class="device-icon-svg tablet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" ry="3"></rect><circle cx="12" cy="16.5" r="1" fill="currentColor"></circle><line x1="6" y1="7" x2="18" y2="7"></line></svg>
+                  Tablet (10% Traffic)
+                </strong>
+                <span class="pill-badge inconclusive" id="tab-dev-status-tablet">Directional, not significant after correction</span>
+              </div>
+              <div style="font-size: 0.85rem; color: var(--text-body); line-height: 1.8;">
+                <div>Sample Size: <strong id="tab-dev-sample-tablet">403 (A) vs 361 (B) &bull; 764 total</strong></div>
+                <div>Control CR: <strong id="tab-dev-cra-tablet">9.18% (37 / 403)</strong></div>
+                <div>Variant CR: <strong style="color: #5fe7c0;" id="tab-dev-crb-tablet">13.85% (50 / 361)</strong></div>
+                <div>Relative Lift: <strong style="color: #5fe7c0;" id="tab-dev-lift-tablet">+50.9%</strong></div>
+                <div style="color: #86efac; font-family: var(--font-mono); font-size: 0.8rem;" id="tab-dev-ci-tablet">unadjusted 95% CI: [+1.4%, +100.3%]</div>
+                <div style="color: #94a3b8; font-size: 0.78rem;" id="tab-dev-padj-tablet">Chi-square p = 0.0556 &bull; Bonferroni-adj. p = 0.1667</div>
+                <div style="color: #94a3b8; font-size: 0.73rem; line-height: 1.35; margin-top: 0.35rem;">Note: 95% CI excludes 0 while p &gt; 0.05 because the CI uses Wald normal approximation while the p-value uses Yates continuity-corrected &chi;&sup2;.</div>
+              </div>
+            </div>
+
+            <!-- Desktop -->
+            <div class="device-card-item">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                <strong style="color: #fff; font-size: 1.05rem; display: flex; align-items: center;">
+                  <svg class="device-icon-svg desktop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                  Desktop (35% Traffic)
+                </strong>
+                <span class="pill-badge inconclusive" id="tab-dev-status-desktop">Directional, not significant after correction</span>
+              </div>
+              <div style="font-size: 0.85rem; color: var(--text-body); line-height: 1.8;">
+                <div>Sample Size: <strong id="tab-dev-sample-desktop">1,447 (A) vs 1,386 (B) &bull; 2,833 total</strong></div>
+                <div>Control CR: <strong id="tab-dev-cra-desktop">12.85% (186 / 1,447)</strong></div>
+                <div>Variant CR: <strong style="color: #5fe7c0;" id="tab-dev-crb-desktop">15.80% (219 / 1,386)</strong></div>
+                <div>Relative Lift: <strong style="color: #5fe7c0;" id="tab-dev-lift-desktop">+22.9%</strong></div>
+                <div style="color: #86efac; font-family: var(--font-mono); font-size: 0.8rem;" id="tab-dev-ci-desktop">unadjusted 95% CI: [+2.8%, +43.0%]</div>
+                <div style="color: #94a3b8; font-size: 0.78rem;" id="tab-dev-padj-desktop">Chi-square p = 0.0288 &bull; Bonferroni-adj. p = 0.0864</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             TAB PANEL 5: REVENUE ANALYSIS
+             ===================================================================== -->
+        <section id="tab-revenue" class="tab-panel">
+          <div class="callout-box">
+            <b>Revenue Per Visitor (RPV) Analysis:</b> Evaluated using <strong>Welch's Two-Sample t-Test</strong> (t = 4.315, <strong>p &lt; 0.001</strong>, 95% CI for lift: [+$1.13, +$3.01]).
+          </div>
+
+          <div class="kpi-row" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 1.5rem;">
+            <div class="kpi-card">
+              <div class="kpi-title">TOTAL REVENUE (A)</div>
+              <div class="kpi-value" id="rev-total-a">$23,559.65</div>
+              <div class="kpi-subtext"><span class="pill-badge" id="rev-visitors-a">4,063 Visitors</span></div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-title">TOTAL REVENUE (B)</div>
+              <div class="kpi-value cyan" id="rev-total-b">$30,973.20</div>
+              <div class="kpi-subtext"><span class="pill-badge active-blue" id="rev-gain-b">+$7,413.55 Gain</span></div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-title">RPV LIFT</div>
+              <div class="kpi-value cyan" id="rev-rpv-lift">+$2.07</div>
+              <div class="kpi-subtext"><span class="pill-badge active-blue" id="rev-rpv-lift-pct">+35.7% Lift</span></div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-title">WELCH'S T-P-VALUE</div>
+              <div class="kpi-value cyan" id="rev-welch-pval">&lt; 0.001</div>
+              <div class="kpi-subtext"><span class="pill-badge active-blue" id="rev-welch-t">t = 4.315</span></div>
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-header">
+              <span class="chart-title">Revenue Comparison: RPV vs AOV</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="chartRevenueDetail"></canvas>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             TAB PANEL 6: BUSINESS INSIGHTS & ROI
+             ===================================================================== -->
+        <section id="tab-business" class="tab-panel">
+          
+          <!-- Limitations Box -->
+          <div class="limitations-box">
+            <div class="limitations-header">
+              <svg class="heading-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              <span>Limitations</span>
+            </div>
+            <ul class="limitations-list">
+              <li>• Results come from simulated data and should be confirmed on real traffic.</li>
+              <li>• Fixed-horizon test; no sequential testing or peeking correction.</li>
+              <li>• Segment results are exploratory.</li>
+              <li>• Variant B changes copy, color, size and icon together, so the lift can't be attributed to any single change.</li>
+            </ul>
+          </div>
+
+          <div class="callout-box">
+            <b>Annualized revenue projection:</b> Calculate projected incremental revenue based on monthly checkout traffic.
+          </div>
+
+          <div class="chart-card" style="margin-bottom: 1.5rem;">
+            <div class="projection-grid">
+              <div>
+                <div class="param-group">
+                  <div class="param-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+                    <label for="roi-traffic-input" style="font-weight: 600; color: #fff;">Monthly visitors reaching checkout:</label>
+                    <input type="number" id="roi-traffic-input" class="typed-num-input" min="10000" max="1000000" step="5000" value="100000">
+                  </div>
+                  <input type="range" id="roi-traffic-slider" class="slider-custom" min="10000" max="1000000" step="5000" value="100000">
+                  <div class="slider-range-labels">
+                    <span>10K</span>
+                    <span>1,000K</span>
+                  </div>
+                </div>
+
+                <div class="param-group" style="margin-top: 1.25rem;">
+                  <div class="param-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+                    <label for="roi-aov-input" style="font-weight: 600; color: #fff;">Average Order Value (AOV $):</label>
+                    <input type="number" id="roi-aov-input" class="typed-num-input" min="20" max="250" step="1" value="59.50">
+                  </div>
+                  <input type="range" id="roi-aov-slider" class="slider-custom" min="20" max="250" step="1" value="59.5">
+                  <div class="slider-range-labels">
+                    <span>$20</span>
+                    <span>$250</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="projection-result-card">
+                <div class="projection-result-title">Projected Annual GMV Gain</div>
+                <div id="roi-annual-result" class="projection-result-val">+$2.24M (range $1.24M to $3.24M)</div>
+                <div id="roi-annual-orders" class="projection-result-sub">
+                  +3,140 additional monthly orders @ +3.14 pts conversion lift
+                </div>
+                <div class="projection-assumption-note">
+                  Computed via orders &times; AOV: 100K visitors &times; +3.14 pts &times; $59.50 &times; 12 &asymp; $2.24M (range $1.2M to $3.2M from 95% CI). Alternative RPV method: 100K &times; $2.07 &times; 12 &asymp; $2.48M. Gross order value, not profit.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             TAB PANEL 7: DATASET EXPLORER
+             ===================================================================== -->
+        <section id="tab-explorer" class="tab-panel">
+          <div class="callout-box">
+            <strong>Raw Dataset Explorer:</strong> Inspect the 8,000 benchmark records or upload a custom CSV (expected columns: <code>user_id, group, device, converted, revenue</code>).
+          </div>
+
+          <div class="toolbar-row">
+            <div style="display: flex; gap: 0.75rem; align-items: center;">
+              <input type="text" id="table-search" class="input-text" placeholder="Search User ID...">
+              <select id="table-filter-group" class="select-clean">
+                <option value="all">Group: All</option>
+                <option value="A">Group A</option>
+                <option value="B">Group B</option>
+              </select>
+              <select id="table-filter-device" class="select-clean">
+                <option value="all">Device: All</option>
+                <option value="mobile">Mobile</option>
+                <option value="desktop">Desktop</option>
+                <option value="tablet">Tablet</option>
+              </select>
+            </div>
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
+              <label for="csv-file-input" class="btn-clean" style="cursor: pointer; margin: 0;">Upload CSV</label>
+              <input type="file" id="csv-file-input" accept=".csv" style="display: none;">
+              <button id="btn-download-csv" class="btn-clean">Download CSV</button>
+            </div>
+          </div>
+
+          <div class="table-card">
+            <table class="clean-table" id="raw-data-table">
+              <thead>
+                <tr>
+                  <th>User ID</th>
+                  <th>Group</th>
+                  <th>Device</th>
+                  <th>Converted</th>
+                  <th>Revenue</th>
+                </tr>
+              </thead>
+              <tbody id="raw-table-body">
+                <!-- Populated dynamically by JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Application Logic -->
+  <script src="js/app.js"></script>
+</body>
+</html>

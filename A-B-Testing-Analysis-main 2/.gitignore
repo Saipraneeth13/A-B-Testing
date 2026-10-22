@@ -1,0 +1,10 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Scratch audit scripts
+audit_*.py
+
+# Python
+__pycache__/
+*.pyc

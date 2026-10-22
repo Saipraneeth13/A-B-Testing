@@ -1,0 +1,2131 @@
+{
+  "total_visitors": 8000,
+  "groupA": {
+    "visitors": 4063,
+    "conversions": 407,
+    "rate": 0.1002,
+    "total_revenue": 23559.65,
+    "rev_per_visitor": 5.7986,
+    "avg_order_value": 57.89
+  },
+  "groupB": {
+    "visitors": 3937,
+    "conversions": 518,
+    "rate": 0.1316,
+    "total_revenue": 30973.2,
+    "rev_per_visitor": 7.8672,
+    "avg_order_value": 59.79
+  },
+  "metrics": {
+    "abs_lift": 0.0314,
+    "rel_lift": 0.3135,
+    "ci_low": 0.0174,
+    "ci_high": 0.0454,
+    "z_stat": 4.391,
+    "p_val": 1.13e-05,
+    "srm_chi2": 1.984,
+    "srm_pval": 0.1589,
+    "welch_pval": 1e-05,
+    "power": 0.992
+  },
+  "device_stats": {
+    "desktop": {
+      "nA": 1447,
+      "nB": 1386,
+      "cA": 186,
+      "cB": 219,
+      "rateA": 0.12854181064270906,
+      "rateB": 0.15800865800865802,
+      "lift_rel": 0.2292393985942373
+    },
+    "mobile": {
+      "nA": 2213,
+      "nB": 2190,
+      "cA": 184,
+      "cB": 249,
+      "rateA": 0.08314505196565748,
+      "rateB": 0.1136986301369863,
+      "lift_rel": 0.36747319833234066
+    },
+    "tablet": {
+      "nA": 403,
+      "nB": 361,
+      "cA": 37,
+      "cB": 50,
+      "rateA": 0.09181141439205956,
+      "rateB": 0.13850415512465375,
+      "lift_rel": 0.5085722841955529
+    }
+  },
+  "cumulative": [
+    {
+      "visitor": 200,
+      "rateA": 0.101,
+      "rateB": 0.1089
+    },
+    {
+      "visitor": 400,
+      "rateA": 0.0966,
+      "rateB": 0.114
+    },
+    {
+      "visitor": 600,
+      "rateA": 0.0954,
+      "rateB": 0.1047
+    },
+    {
+      "visitor": 800,
+      "rateA": 0.0888,
+      "rateB": 0.1059
+    },
+    {
+      "visitor": 1000,
+      "rateA": 0.0876,
+      "rateB": 0.1139
+    },
+    {
+      "visitor": 1200,
+      "rateA": 0.0818,
+      "rateB": 0.1158
+    },
+    {
+      "visitor": 1400,
+      "rateA": 0.0811,
+      "rateB": 0.1274
+    },
+    {
+      "visitor": 1600,
+      "rateA": 0.0771,
+      "rateB": 0.1286
+    },
+    {
+      "visitor": 1800,
+      "rateA": 0.08,
+      "rateB": 0.1272
+    },
+    {
+      "visitor": 2000,
+      "rateA": 0.0842,
+      "rateB": 0.1297
+    },
+    {
+      "visitor": 2200,
+      "rateA": 0.0872,
+      "rateB": 0.1288
+    },
+    {
+      "visitor": 2400,
+      "rateA": 0.0932,
+      "rateB": 0.1277
+    },
+    {
+      "visitor": 2600,
+      "rateA": 0.0957,
+      "rateB": 0.1308
+    },
+    {
+      "visitor": 2800,
+      "rateA": 0.0951,
+      "rateB": 0.1308
+    },
+    {
+      "visitor": 3000,
+      "rateA": 0.0916,
+      "rateB": 0.1299
+    },
+    {
+      "visitor": 3200,
+      "rateA": 0.0911,
+      "rateB": 0.1285
+    },
+    {
+      "visitor": 3400,
+      "rateA": 0.09,
+      "rateB": 0.1303
+    },
+    {
+      "visitor": 3600,
+      "rateA": 0.0898,
+      "rateB": 0.1306
+    },
+    {
+      "visitor": 3800,
+      "rateA": 0.092,
+      "rateB": 0.1283
+    },
+    {
+      "visitor": 4000,
+      "rateA": 0.0947,
+      "rateB": 0.1294
+    },
+    {
+      "visitor": 4200,
+      "rateA": 0.0967,
+      "rateB": 0.1318
+    },
+    {
+      "visitor": 4400,
+      "rateA": 0.0961,
+      "rateB": 0.133
+    },
+    {
+      "visitor": 4600,
+      "rateA": 0.097,
+      "rateB": 0.1322
+    },
+    {
+      "visitor": 4800,
+      "rateA": 0.0978,
+      "rateB": 0.1311
+    },
+    {
+      "visitor": 5000,
+      "rateA": 0.098,
+      "rateB": 0.1332
+    },
+    {
+      "visitor": 5200,
+      "rateA": 0.0982,
+      "rateB": 0.1333
+    },
+    {
+      "visitor": 5400,
+      "rateA": 0.0987,
+      "rateB": 0.1339
+    },
+    {
+      "visitor": 5600,
+      "rateA": 0.098,
+      "rateB": 0.1326
+    },
+    {
+      "visitor": 5800,
+      "rateA": 0.0991,
+      "rateB": 0.1319
+    },
+    {
+      "visitor": 6000,
+      "rateA": 0.1,
+      "rateB": 0.1329
+    },
+    {
+      "visitor": 6200,
+      "rateA": 0.0999,
+      "rateB": 0.1346
+    },
+    {
+      "visitor": 6400,
+      "rateA": 0.0985,
+      "rateB": 0.1348
+    },
+    {
+      "visitor": 6600,
+      "rateA": 0.0979,
+      "rateB": 0.1336
+    },
+    {
+      "visitor": 6800,
+      "rateA": 0.0993,
+      "rateB": 0.1333
+    },
+    {
+      "visitor": 7000,
+      "rateA": 0.0985,
+      "rateB": 0.132
+    },
+    {
+      "visitor": 7200,
+      "rateA": 0.0982,
+      "rateB": 0.1309
+    },
+    {
+      "visitor": 7400,
+      "rateA": 0.0987,
+      "rateB": 0.1304
+    },
+    {
+      "visitor": 7600,
+      "rateA": 0.0982,
+      "rateB": 0.1322
+    },
+    {
+      "visitor": 7800,
+      "rateA": 0.0977,
+      "rateB": 0.1322
+    },
+    {
+      "visitor": 8000,
+      "rateA": 0.1002,
+      "rateB": 0.1316
+    }
+  ],
+  "sample_rows": [
+    {
+      "user_id": "1",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "2",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "3",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "4",
+      "group": "A",
+      "device": "mobile",
+      "converted": "1",
+      "revenue": "74.25"
+    },
+    {
+      "user_id": "5",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "6",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "7",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "8",
+      "group": "B",
+      "device": "mobile",
+      "converted": "1",
+      "revenue": "26.45"
+    },
+    {
+      "user_id": "9",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "10",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "11",
+      "group": "B",
+      "device": "mobile",
+      "converted": "1",
+      "revenue": "89.22"
+    },
+    {
+      "user_id": "12",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "13",
+      "group": "B",
+      "device": "tablet",
+      "converted": "1",
+      "revenue": "22.63"
+    },
+    {
+      "user_id": "14",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "15",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "16",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "17",
+      "group": "B",
+      "device": "mobile",
+      "converted": "1",
+      "revenue": "11.73"
+    },
+    {
+      "user_id": "18",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "19",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "20",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "21",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "22",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "23",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "24",
+      "group": "B",
+      "device": "tablet",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "25",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "26",
+      "group": "B",
+      "device": "tablet",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "27",
+      "group": "A",
+      "device": "desktop",
+      "converted": "1",
+      "revenue": "104.3"
+    },
+    {
+      "user_id": "28",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "29",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "30",
+      "group": "A",
+      "device": "tablet",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "31",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "32",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "33",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "34",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "35",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "36",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "37",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "38",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "39",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "40",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "41",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "42",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "43",
+      "group": "B",
+      "device": "mobile",
+      "converted": "1",
+      "revenue": "72.26"
+    },
+    {
+      "user_id": "44",
+      "group": "A",
+      "device": "tablet",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "45",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "46",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "47",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "48",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "49",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "50",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "51",
+      "group": "B",
+      "device": "tablet",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "52",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "53",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "54",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "55",
+      "group": "A",
+      "device": "desktop",
+      "converted": "1",
+      "revenue": "26.61"
+    },
+    {
+      "user_id": "56",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "57",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "58",
+      "group": "A",
+      "device": "tablet",
+      "converted": "1",
+      "revenue": "68.8"
+    },
+    {
+      "user_id": "59",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "60",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "61",
+      "group": "B",
+      "device": "tablet",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "62",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "63",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "64",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "65",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "66",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "67",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "68",
+      "group": "A",
+      "device": "desktop",
+      "converted": "1",
+      "revenue": "136.65"
+    },
+    {
+      "user_id": "69",
+      "group": "A",
+      "device": "tablet",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "70",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "71",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "72",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "73",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "74",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "75",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "76",
+      "group": "A",
+      "device": "mobile",
+      "converted": "1",
+      "revenue": "102.14"
+    },
+    {
+      "user_id": "77",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "78",
+      "group": "A",
+      "device": "desktop",
+      "converted": "1",
+      "revenue": "124.03"
+    },
+    {
+      "user_id": "79",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "80",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "81",
+      "group": "B",
+      "device": "mobile",
+      "converted": "1",
+      "revenue": "61.93"
+    },
+    {
+      "user_id": "82",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "83",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "84",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "85",
+      "group": "B",
+      "device": "mobile",
+      "converted": "1",
+      "revenue": "37.11"
+    },
+    {
+      "user_id": "86",
+      "group": "B",
+      "device": "tablet",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "87",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "88",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "89",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "90",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "91",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "92",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "93",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "94",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "95",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "96",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "97",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "98",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "99",
+      "group": "B",
+      "device": "desktop",
+      "converted": "1",
+      "revenue": "100.35"
+    },
+    {
+      "user_id": "100",
+      "group": "A",
+      "device": "tablet",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "101",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "102",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "103",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "104",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "105",
+      "group": "B",
+      "device": "tablet",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "106",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "107",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "108",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "109",
+      "group": "A",
+      "device": "tablet",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "110",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "111",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "112",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "113",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "114",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "115",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "116",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "117",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "118",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "119",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "120",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "121",
+      "group": "A",
+      "device": "tablet",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "122",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "123",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "124",
+      "group": "A",
+      "device": "mobile",
+      "converted": "1",
+      "revenue": "65.78"
+    },
+    {
+      "user_id": "125",
+      "group": "B",
+      "device": "tablet",
+      "converted": "1",
+      "revenue": "121.43"
+    },
+    {
+      "user_id": "126",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "127",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "128",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "129",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "130",
+      "group": "B",
+      "device": "tablet",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "131",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "132",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "133",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "134",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "135",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "136",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "137",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "138",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "139",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "140",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "141",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "142",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "143",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "144",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "145",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "146",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "147",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "148",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "149",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "150",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "151",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "152",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "153",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "154",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "155",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "156",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "157",
+      "group": "A",
+      "device": "tablet",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "158",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "159",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "160",
+      "group": "B",
+      "device": "mobile",
+      "converted": "1",
+      "revenue": "75.66"
+    },
+    {
+      "user_id": "161",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "162",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "163",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "164",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "165",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "166",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "167",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "168",
+      "group": "A",
+      "device": "mobile",
+      "converted": "1",
+      "revenue": "131.64"
+    },
+    {
+      "user_id": "169",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "170",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "171",
+      "group": "A",
+      "device": "tablet",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "172",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "173",
+      "group": "B",
+      "device": "tablet",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "174",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "175",
+      "group": "B",
+      "device": "desktop",
+      "converted": "1",
+      "revenue": "30.83"
+    },
+    {
+      "user_id": "176",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "177",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "178",
+      "group": "A",
+      "device": "tablet",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "179",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "180",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "181",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "182",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "183",
+      "group": "A",
+      "device": "desktop",
+      "converted": "1",
+      "revenue": "109.77"
+    },
+    {
+      "user_id": "184",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "185",
+      "group": "A",
+      "device": "tablet",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "186",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "187",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "188",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "189",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "190",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "191",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "192",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "193",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "194",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "195",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "196",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "197",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "198",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "199",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "200",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "201",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "202",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "203",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "204",
+      "group": "B",
+      "device": "desktop",
+      "converted": "1",
+      "revenue": "51.87"
+    },
+    {
+      "user_id": "205",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "206",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "207",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "208",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "209",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "210",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "211",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "212",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "213",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "214",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "215",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "216",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "217",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "218",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "219",
+      "group": "A",
+      "device": "tablet",
+      "converted": "1",
+      "revenue": "33.62"
+    },
+    {
+      "user_id": "220",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "221",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "222",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "223",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "224",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "225",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "226",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "227",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "228",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "229",
+      "group": "B",
+      "device": "desktop",
+      "converted": "1",
+      "revenue": "84.86"
+    },
+    {
+      "user_id": "230",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "231",
+      "group": "A",
+      "device": "tablet",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "232",
+      "group": "B",
+      "device": "mobile",
+      "converted": "1",
+      "revenue": "112.07"
+    },
+    {
+      "user_id": "233",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "234",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "235",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "236",
+      "group": "B",
+      "device": "mobile",
+      "converted": "1",
+      "revenue": "71.71"
+    },
+    {
+      "user_id": "237",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "238",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "239",
+      "group": "A",
+      "device": "mobile",
+      "converted": "1",
+      "revenue": "48.11"
+    },
+    {
+      "user_id": "240",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "241",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "242",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "243",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "244",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "245",
+      "group": "B",
+      "device": "desktop",
+      "converted": "1",
+      "revenue": "29.81"
+    },
+    {
+      "user_id": "246",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "247",
+      "group": "B",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "248",
+      "group": "A",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "249",
+      "group": "B",
+      "device": "mobile",
+      "converted": "0",
+      "revenue": "0.0"
+    },
+    {
+      "user_id": "250",
+      "group": "A",
+      "device": "desktop",
+      "converted": "0",
+      "revenue": "0.0"
+    }
+  ],
+  "bootstrap": {
+    "ci_low": 0.0172,
+    "ci_high": 0.0457,
+    "mean_lift": 0.0315,
+    "num_resamples": 5000,
+    "bins": [
+      0.0053,
+      0.0068,
+      0.0082,
+      0.0097,
+      0.0111,
+      0.0126,
+      0.014,
+      0.0155,
+      0.0169,
+      0.0184,
+      0.0198,
+      0.0213,
+      0.0227,
+      0.0242,
+      0.0256,
+      0.0271,
+      0.0285,
+      0.03,
+      0.0314,
+      0.0329,
+      0.0344,
+      0.0358,
+      0.0373,
+      0.0387,
+      0.0402,
+      0.0416,
+      0.0431,
+      0.0445,
+      0.046,
+      0.0474,
+      0.0489,
+      0.0503,
+      0.0518,
+      0.0532,
+      0.0547
+    ],
+    "counts": [
+      1,
+      3,
+      3,
+      3,
+      8,
+      12,
+      19,
+      39,
+      57,
+      75,
+      106,
+      154,
+      204,
+      219,
+      282,
+      317,
+      368,
+      359,
+      436,
+      395,
+      394,
+      316,
+      325,
+      225,
+      195,
+      155,
+      108,
+      77,
+      55,
+      35,
+      19,
+      17,
+      6,
+      6,
+      7
+    ],
+    "bin_labels": [
+      "0.0046",
+      "0.0060",
+      "0.0075",
+      "0.0089",
+      "0.0104",
+      "0.0118",
+      "0.0133",
+      "0.0147",
+      "0.0162",
+      "0.0176",
+      "0.0191",
+      "0.0206",
+      "0.0220",
+      "0.0235",
+      "0.0249",
+      "0.0264",
+      "0.0278",
+      "0.0293",
+      "0.0307",
+      "0.0322",
+      "0.0336",
+      "0.0351",
+      "0.0365",
+      "0.0380",
+      "0.0394",
+      "0.0409",
+      "0.0423",
+      "0.0438",
+      "0.0452",
+      "0.0467",
+      "0.0482",
+      "0.0496",
+      "0.0511",
+      "0.0525",
+      "0.0540"
+    ]
+  }
+}

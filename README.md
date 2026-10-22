@@ -1,6 +1,8 @@
 
 # A/B Test Analysis: User Behavior Analysis 
 
+**Live Dashboard:** [Open A/B Testing Dashboard](https://ab-testing-dashboard-sai26.streamlit.app/)
+
 End-to-end statistical analysis of an A/B test comparing the current checkout button (**A**) with a redesigned one (**B**). Includes data quality checks, hypothesis testing, confidence intervals, bootstrapping, segment analysis and a business recommendation.
 
 ![Results](results/ab_test_results.png)
